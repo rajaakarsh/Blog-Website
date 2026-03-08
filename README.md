@@ -154,14 +154,16 @@ The site is static; no runtime configuration is required. Below are common usage
 #### Recent CSS Refactor  
 
 - **Body background** now uses the CSS variable `--bg-color` for easy theming.  
+- **Text color** is managed via the new variable `--text-color`, allowing quick theme switches.  
 - **Container layout** switched to a Flexbox‑based centering approach, improving vertical alignment on tall viewports.  
 - Added a **container background variable** (`--container-bg`) to make future theming (e.g., dark mode) straightforward.  
 
 ```css
 /* style.css – excerpt */
 :root {
-  --bg-color: #f9fafb;          /* Light gray page background */
-  --container-bg: #ffffff;      /* Default container background */
+  --bg-color:      #f9fafb;   /* Light gray page background */
+  --text-color:    #111111;   /* Primary text color */
+  --container-bg: #ffffff;   /* Default container background */
 }
 
 /* Body */
@@ -169,6 +171,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: flex-start;      /* Top‑aligned but centered horizontally */
